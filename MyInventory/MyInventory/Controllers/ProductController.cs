@@ -24,6 +24,11 @@ namespace MyInventory.Controllers
             return View(products);
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Create(Product products)
         {
