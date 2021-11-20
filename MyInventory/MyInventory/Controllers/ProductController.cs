@@ -36,7 +36,7 @@ namespace MyInventory.Controllers
 
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                string sql = $"Insert into Products(Name, Description, Price, Image) Values('{products.Name}','{products.Description}', '{products.Price}', '{products.Image}')";
+                string sql = $"Insert into Products(Name, Description, Price) Values('{products.Name}','{products.Description}', '{products.Price}')";
                 //using (SqlCommand command = new SqlCommand(sql, sqlConnection))
                 //{
                 //    command.CommandType = CommandType.Text;
@@ -80,7 +80,7 @@ namespace MyInventory.Controllers
 
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                string sql = $"Update Products Set Name='{products.Name}', Description='{products.Description}', Price='{products.Price}', Image='{products.Image}' where Id='{products.Id}'";
+                string sql = $"Update Products Set Name='{products.Name}', Description='{products.Description}', Price='{products.Price}' where Id='{products.Id}'";
                 //using (SqlCommand command = new SqlCommand(sql, sqlConnection))
                 //{
                 //    command.CommandType = CommandType.Text;
@@ -140,6 +140,23 @@ namespace MyInventory.Controllers
             }
 
             return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            var findById = await context.Products.FindAsync(id);
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            if (findById == null)
+            {
+                return NotFound();
+            }
+
+            return View(findById);
         }
     }
 }
