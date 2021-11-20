@@ -97,5 +97,49 @@ namespace MyInventory.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            var findById = await context.Products.FindAsync(id);
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            if (findById == null)
+            {
+                return NotFound();
+            }
+
+            return View(findById);
+        }
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(Product products, int? id)
+        {
+            var findById = await context.Products.FindAsync(id);
+
+            string connectionString = Configuration["ConnectionStrings:DefaultConnection"];
+
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                string sql = $"Delete from Products where Id='{products.Id}'";
+                //using (SqlCommand command = new SqlCommand(sql, sqlConnection))
+                //{
+                //    command.CommandType = CommandType.Text;
+                //    sqlConnection.Open();
+                //    command.ExecuteNonQuery();
+                //    sqlConnection.Close();
+                //}
+
+                SqlDataAdapter sda = new SqlDataAdapter(sql, sqlConnection);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
