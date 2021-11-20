@@ -1,12 +1,12 @@
 ﻿@model Product
 
 @{
-    ViewData["Title"] = "Create - Product";
+    ViewData["Title"] = "Edit - Product";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="card text-white">
-    <div class="card-header bg-primary">Add New Department</div>
+    <div class="card-header bg-primary">Edit Department</div>
     <div class="card-body text-dark">
         <div class="">
             <form id="departmentCreateForm" method="post">
@@ -48,7 +48,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-4 offset-2 text-primary">
-                        <input type="submit" id="departmentCreateSubmit" class="btn btn-primary form-control mt-2 text-white" value="Submit"/>
+                        <button type="submit" class="btn btn-info form-control mt-2"><i class="far fa-save"></i> &nbsp; Update</button>
                     </div>
                     <div class="col-4">
                         <a class="btn btn-dark text-white form-control mt-2" asp-controller="Product" asp-action="Index"><i class="fas fa-arrow-left"></i> &nbsp; Back To List</a>
