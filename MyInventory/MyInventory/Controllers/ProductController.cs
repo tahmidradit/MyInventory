@@ -3,6 +3,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using MyInventory.Data;
 using MyInventory.Models;
+using MyInventory.Models.ViewModels;
 using System.Data;
 
 namespace MyInventory.Controllers
@@ -155,7 +156,13 @@ namespace MyInventory.Controllers
                 return NotFound();
             }
 
-            return View(findById);
+            OrderProductViewModel orderProductViewModel = new OrderProductViewModel()
+            {
+                Order = new Order(),
+                Product = findById
+            };
+
+            return View(orderProductViewModel);
         }
 
 

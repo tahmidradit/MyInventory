@@ -1,4 +1,6 @@
-﻿@model Product
+﻿@using MyInventory.Models.ViewModels
+
+@model OrderProductViewModel
 @{
     ViewData["Title"] = "Details Product";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,11 +8,20 @@
 
 <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">@Model.Name</h5>
-    <p class="card-text">@Model.Description</p>
-    <p class="card-text">@Model.Price</p>
-    @*<input type="text" class="form-control" asp-for="Count" />*@
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">@Model.Product.Name</h5>
+    <p class="card-text">@Model.Product.Description</p>
+    <p class="card-text">@Model.Product.Price</p>
+    <div class="row">
+        <div class="col-2 mt-2">
+            <label>Quantity</label>
+        </div>
+        <div >
+            <input type="number" class="form-control mt-2" asp-for="@Model.Order.Count" />
+        </div>
+         
+    </div>
+    
+    <a href="#" class="btn btn-primary mt-2">Place Order</a>
   </div>
 </div>
 
