@@ -116,10 +116,9 @@ namespace MyInventory.Controllers
         }
 
         [HttpPost, ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete(Product products, int? id)
+        public IActionResult Delete(Product products)
         {
-            var findById = await context.Products.FindAsync(id);
-
+        
             string connectionString = Configuration["ConnectionStrings:DefaultConnection"];
 
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
@@ -158,5 +157,23 @@ namespace MyInventory.Controllers
 
             return View(findById);
         }
+
+
+        //public async Task<IActionResult> Details(int? id)
+        //{
+        //    if (id == 0)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    menuItemViewModel.MenuItem = await db.MenuItems.Include(m => m.Category).Include(m => m.Subcategory).SingleOrDefaultAsync(m => m.Id == id);
+
+        //    if (menuItemViewModel.MenuItem == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(menuItemViewModel);
+        //}
     }
 }
