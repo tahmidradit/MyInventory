@@ -2,16 +2,19 @@
 
 namespace MyInventory.Models
 {
-    public class Product
+    public class Order
     {
         [Key]
         public int Id { get; set; }
 
         [Required, StringLength(100)]
         public string Name { get; set; }
-        public string Description { get; set; }
-
+        
         [Required]
-        public double Price  { get; set; }
+        public double Price { get; set; }
+
+        public Product Product { get; set; }
+        public int ProductId { get; set; }
+        public int Count { get; set; }
     }
 }
