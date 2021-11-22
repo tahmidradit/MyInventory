@@ -199,5 +199,11 @@ namespace MyInventory.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public async Task<IActionResult> RetriveData()
+        {
+            return Json(new { data = await context.Products.ToListAsync() });
+        }
     }
 }

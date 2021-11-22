@@ -6,7 +6,7 @@
 }
 
 <div class="card text-white">
-    <div class="card-header bg-primary">Add New Department</div>
+    <div class="card-header bg-primary">Add New Product</div>
     <div class="card-body text-dark">
         <div class="">
             <form id="departmentCreateForm" method="post">
@@ -16,7 +16,7 @@
                         <label asp-for="Name"></label>
                     </div>
                     <div class="col-8">
-                        <input type="text" id="Name" required class="form-control mt-2" placeholder="Enter new department name" asp-for="Name"/>
+                        <input type="text" id="Name" required class="form-control mt-2"  asp-for="Name"/>
                     </div>
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
@@ -25,7 +25,7 @@
                         <label asp-for="Description"></label>
                     </div>
                     <div class="col-8">
-                        <input type="text" id="Description" required class="form-control mt-2" placeholder="Enter new department name" asp-for="Description"/>
+                        <input type="text" id="Description" required class="form-control mt-2"  asp-for="Description"/>
                     </div>
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
@@ -34,7 +34,7 @@
                         <label asp-for="Price"></label>
                     </div>
                     <div class="col-8">
-                        <input type="text" id="Price" required class="form-control mt-2" placeholder="Enter new department name" asp-for="Price"/>
+                        <input type="text" id="Price" required class="form-control mt-2"  asp-for="Price"/>
                     </div>
                     <span asp-validation-for="Price" class="text-danger"></span>
                 </div>
