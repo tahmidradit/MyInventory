@@ -9,7 +9,8 @@ namespace MyInventory.Models
 
         [Required, StringLength(100)]
         public string Name { get; set; }
-        
+        public string Description { get; set; }
+
         [Required]
         public double Price { get; set; }
 
@@ -18,5 +19,6 @@ namespace MyInventory.Models
 
         [Range(1, int.MaxValue, ErrorMessage = "Items must be more than or equal to {1}")]
         public int Count { get; set; }
+        public string UserInfoId { get; set; }
     }
 }

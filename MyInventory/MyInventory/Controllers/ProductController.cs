@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using MyInventory.Data;
 using MyInventory.Models;
 using MyInventory.Models.ViewModels;
+using MyInventory.StaticFiles;
 using System.Data;
+using System.Security.Claims;
 
 namespace MyInventory.Controllers
 {
@@ -49,7 +52,7 @@ namespace MyInventory.Controllers
                 SqlDataAdapter sda = new SqlDataAdapter(sql, sqlConnection);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
-                
+
             }
 
             return RedirectToAction(nameof(Index));
@@ -64,11 +67,11 @@ namespace MyInventory.Controllers
                 return NotFound();
             }
 
-            if(findById == null)
+            if (findById == null)
             {
                 return NotFound();
             }
-            
+
             return View(findById);
         }
 
@@ -119,7 +122,7 @@ namespace MyInventory.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public IActionResult Delete(Product products)
         {
-        
+
             string connectionString = Configuration["ConnectionStrings:DefaultConnection"];
 
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
@@ -144,6 +147,7 @@ namespace MyInventory.Controllers
 
         public async Task<IActionResult> Details(int? id)
         {
+
             var findById = await context.Products.FindAsync(id);
 
             if (id == null)
@@ -166,21 +170,34 @@ namespace MyInventory.Controllers
         }
 
 
-        //public async Task<IActionResult> Details(int? id)
-        //{
-        //    if (id == 0)
-        //    {
-        //        return NotFound();
-        //    }
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Details(Order order, int id)
+        {
+            var findById = context.Products.Find(id);
+            string connectionString = Configuration["ConnectionStrings:DefaultConnection"];
 
-        //    menuItemViewModel.MenuItem = await db.MenuItems.Include(m => m.Category).Include(m => m.Subcategory).SingleOrDefaultAsync(m => m.Id == id);
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                string sql = $"Insert into Orders(Name,Description,Price,Count) Values('{order.Name}','{order.Description}','{order.Price}','{order.Count}')";
+                //using (SqlCommand command = new SqlCommand(sql, sqlConnection))
+                //{
+                //    command.CommandType = CommandType.Text;
+                //    sqlConnection.Open();
+                //    command.ExecuteNonQuery();
+                //    sqlConnection.Close();
+                //}
 
-        //    if (menuItemViewModel.MenuItem == null)
-        //    {
-        //        return NotFound();
-        //    }
+                SqlDataAdapter sda = new SqlDataAdapter(sql, sqlConnection);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
 
-        //    return View(menuItemViewModel);
-        //}
+            }
+            //context.Orders.Add(order);
+            //context.SaveChanges();
+
+            return View();
+        }
     }
 }
