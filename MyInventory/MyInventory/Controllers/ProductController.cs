@@ -55,6 +55,8 @@ namespace MyInventory.Controllers
 
             }
 
+            //context.Products.Add(products);
+            //context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
 
