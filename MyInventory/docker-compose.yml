@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  myinventorydatabase:
+    container_name: mi-db-cont
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    ports: 
+      - 4002:1433
+    environment: 
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=@Tahmid000@#
+  myinventory:
+    image: ${DOCKER_REGISTRY-}myinventory
+    build:
+      context: .
+      dockerfile: MyInventory/Dockerfile
+    ports:
+      - 4001:80
+    depends_on:
+      - myinventorydatabase
+    environment:
+      - dbServer=localhost
+      - database=MyInventory
+      - dbUserId=SA
+      - dbPassword=@Tahmid000@#
+
+    
