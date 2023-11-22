@@ -8,8 +8,6 @@ namespace MyInventory.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Order> Orders { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
             try
@@ -32,5 +30,7 @@ namespace MyInventory.Data
                 Console.WriteLine(ex.Message);
             }
         }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }

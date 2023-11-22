@@ -7,11 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 //var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-var dbServer = "localhost";
-var database = "MyInventory";
-var dbUserId = "SA";
-var dbPassword = "@Tahmid000@#";
-var connectionString = $"server = {dbServer}; database = {database}; user Id={dbUserId}; password={dbPassword}; Trusted_Connection = True; TrustServerCertificate=True;";
+var dbServer = Environment.GetEnvironmentVariable("DB_HOST");
+var database = Environment.GetEnvironmentVariable("database");
+var dbUserId = Environment.GetEnvironmentVariable("dbUserId");
+var dbPassword = Environment.GetEnvironmentVariable("dbPassword");
+var connectionString = $"Data Source = {dbServer}; Initial Catalog = {database}; user ID={dbUserId}; password={dbPassword};TrustServerCertificate=True;";
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
