@@ -1,0 +1,32 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP.NET Core service.
+
+version: '3.4'
+
+networks:
+  minet:
+services:
+  midb:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - 1433:1433
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=@pass123@#
+    networks:
+      - minet
+  myinventory:
+    image: myinventory
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 5012:80
+    depends_on:
+      - midb
+    environment:
+      - db_host=midb
+      - initial_catalogue=MyInventory
+      - db_userId=SA
+      - db_password=@pass123@#
+    networks:
+      - minet
