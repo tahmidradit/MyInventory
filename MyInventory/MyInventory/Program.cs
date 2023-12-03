@@ -6,7 +6,12 @@ using MyInventory.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+// var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var dbServer = Environment.GetEnvironmentVariable("db_host");
+var database = Environment.GetEnvironmentVariable("initial_catalogue");
+var dbUserId = Environment.GetEnvironmentVariable("db_userId");
+var dbPassword = Environment.GetEnvironmentVariable("db_password");
+var connectionString = $"Data Source = {dbServer}; Initial Catalog = {database}; user ID={dbUserId}; password={dbPassword};TrustServerCertificate=True;";
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -20,6 +25,8 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
+    //
+    
 }
 else
 {
@@ -27,7 +34,11 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+//
 
+app.UseDeveloperExceptionPage();
+app.UseMigrationsEndPoint();
+//
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

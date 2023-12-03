@@ -20,7 +20,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     ports:
-      - 5012:80
+      - 5012:5012
     depends_on:
       - midb
     environment:
