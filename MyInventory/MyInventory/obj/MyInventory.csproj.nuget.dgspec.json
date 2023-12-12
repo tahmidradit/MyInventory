@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\dotnet\\WebApplication\\source\\MyInventory\\MyInventory\\MyInventory\\MyInventory.csproj": {}
+    "D:\\Project\\dotnet\\WebApplication\\source\\tahmidradit\\MyInventory\\MyInventory\\MyInventory\\MyInventory.csproj": {}
   },
   "projects": {
-    "D:\\Project\\dotnet\\WebApplication\\source\\MyInventory\\MyInventory\\MyInventory\\MyInventory.csproj": {
+    "D:\\Project\\dotnet\\WebApplication\\source\\tahmidradit\\MyInventory\\MyInventory\\MyInventory\\MyInventory.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\dotnet\\WebApplication\\source\\MyInventory\\MyInventory\\MyInventory\\MyInventory.csproj",
+        "projectUniqueName": "D:\\Project\\dotnet\\WebApplication\\source\\tahmidradit\\MyInventory\\MyInventory\\MyInventory\\MyInventory.csproj",
         "projectName": "MyInventory",
-        "projectPath": "D:\\Project\\dotnet\\WebApplication\\source\\MyInventory\\MyInventory\\MyInventory\\MyInventory.csproj",
-        "packagesPath": "C:\\Users\\radit\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\dotnet\\WebApplication\\source\\MyInventory\\MyInventory\\MyInventory\\obj\\",
+        "projectPath": "D:\\Project\\dotnet\\WebApplication\\source\\tahmidradit\\MyInventory\\MyInventory\\MyInventory\\MyInventory.csproj",
+        "packagesPath": "C:\\Users\\Radit\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\dotnet\\WebApplication\\source\\tahmidradit\\MyInventory\\MyInventory\\MyInventory\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\radit\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Radit\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
