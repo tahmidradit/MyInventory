@@ -13,8 +13,8 @@ namespace MyInventory.Data
             try
             {
                 var databaseCreator = Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator;
-
-                if(databaseCreator == null)
+                
+                if(databaseCreator != null)
                 {
                     if(!databaseCreator.CanConnect())
                     {
