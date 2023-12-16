@@ -13,25 +13,30 @@ namespace MyInventory.Data
             try
             {
                 var databaseCreator = Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator;
-                
-                if(databaseCreator != null)
+
+                if (databaseCreator != null)
                 {
-                    if(!databaseCreator.CanConnect())
+                    if (!databaseCreator.CanConnect())
                     {
                         databaseCreator.Create();
                     }
-                    if(!databaseCreator.HasTables())
+                    if (!databaseCreator.HasTables())
                     {
                         databaseCreator.CreateTables();
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<TestTable> TestTables { get; set; }
+        public DbSet<Tm> Tms { get; set; }
+        public DbSet<PMS> PMS { get; set; }
+        public DbSet<AfterEnablingMig> AfterEnablingMigs { get; set; }
+        public DbSet<Radit> Radit { get; set; }
     }
 }

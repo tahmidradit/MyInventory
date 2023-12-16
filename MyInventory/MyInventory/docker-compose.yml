@@ -26,7 +26,7 @@ services:
     environment:
       - db_host=midb
       - initial_catalogue=MyInventory
-      - db_userId=SA
+      - db_userId=sa
       - db_password=@pass123@#
     networks:
       - minet
