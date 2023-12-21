@@ -7,10 +7,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-var dbServer = Environment.GetEnvironmentVariable("db_host");
-var database = Environment.GetEnvironmentVariable("initial_catalogue");
-var dbUserId = Environment.GetEnvironmentVariable("db_userId");
-var dbPassword = Environment.GetEnvironmentVariable("db_password");
+//var dbServer = Environment.GetEnvironmentVariable("db_host");
+//var database = Environment.GetEnvironmentVariable("initial_catalogue");
+//var dbUserId = Environment.GetEnvironmentVariable("db_userId");
+//var dbPassword = Environment.GetEnvironmentVariable("db_password");
+
+var dbServer = "localhost";
+var database = "MyInventory";
+var dbUserId = "SA";
+var dbPassword = "@Tahmid000Radit@#";
+
 var connectionString = $"Data Source = {dbServer}; Initial Catalog = {database}; user ID={dbUserId}; password={dbPassword};TrustServerCertificate=True;";
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));

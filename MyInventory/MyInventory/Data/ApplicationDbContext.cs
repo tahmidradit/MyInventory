@@ -10,26 +10,26 @@ namespace MyInventory.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) 
         {
-            try
-            {
-                var databaseCreator = Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator;
+            //try
+            //{
+            //    var databaseCreator = Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator;
 
-                if (databaseCreator != null)
-                {
-                    if (!databaseCreator.CanConnect())
-                    {
-                        databaseCreator.Create();
-                    }
-                    if (!databaseCreator.HasTables())
-                    {
-                        databaseCreator.CreateTables();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
+            //    if (databaseCreator != null)
+            //    {
+            //        if (!databaseCreator.CanConnect())
+            //        {
+            //            databaseCreator.Create();
+            //        }
+            //        if (!databaseCreator.HasTables())
+            //        {
+            //            databaseCreator.CreateTables();
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex);
+            //}
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
@@ -38,5 +38,8 @@ namespace MyInventory.Data
         public DbSet<PMS> PMS { get; set; }
         public DbSet<AfterEnablingMig> AfterEnablingMigs { get; set; }
         public DbSet<Radit> Radit { get; set; }
+        public DbSet<ClassTest> ClassTests { get; set; }
+        public DbSet<ClassA> ClassA { get; set; }
+        public DbSet<ClassC> ClassC { get; set; }
     }
 }

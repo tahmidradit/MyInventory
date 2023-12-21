@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace MyInventory.Data
 {
@@ -9,7 +10,14 @@ namespace MyInventory.Data
             using (var serviceScope = app.ApplicationServices.CreateScope())
             {
                 Console.WriteLine("Applying Migrations...");
-                serviceScope.ServiceProvider.GetService<ApplicationDbContext>().Database.Migrate();
+                //serviceScope.ServiceProvider.GetService<ApplicationDbContext>().Database.Migrate();
+                var services = serviceScope.ServiceProvider;
+
+                var context = services.GetRequiredService<ApplicationDbContext>();
+                if (context.Database.GetPendingMigrations().Any())
+                {
+                    context.Database.Migrate();
+                }
             }
         }
     }
