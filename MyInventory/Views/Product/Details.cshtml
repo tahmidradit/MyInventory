@@ -1,0 +1,40 @@
+﻿@using MyInventory.Models.ViewModels
+
+@model OrderProductViewModel
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card" style="width: 18rem;">
+  <div  class="card-body">
+        <h5 class="card-title">@Model.Product.Name</h5>
+        <p class="card-text">@Model.Product.Description</p>
+        <p  class="card-text">@Model.Product.Price</p>
+      <form  id="form" method="post" asp-controller="Product" asp-action="Details">
+    
+        <input id="Name" type="text" class="form-control mt-2" asp-for="@Model.Order.Name" />
+        <input id="Description" type="text" class="form-control mt-2" asp-for="@Model.Order.Description" />
+        <input id="Price" type="text"  class="form-control mt-2" asp-for="@Model.Order.Price" />
+        <input  type="number" class="form-control mt-2" asp-for="@Model.Order.Count" />
+        <button id="submit" class="btn btn-primary text-white form-control mt-2" type="button"><i class="fas fa-plus"></i> &nbsp; Place Order</button>
+   
+      </form>
+    
+  </div>
+</div>
+<br /> <br />
+@*<form>
+         <input   type="text" class="form-control mt-2" asp-for="@Model.Order.Name" />
+        <input  type="text" class="form-control mt-2" asp-for="@Model.Order.Description" />
+        <input  type="text"  class="form-control mt-2" asp-for="@Model.Order.Price" />
+        <input type="number" class="form-control mt-2" asp-for="@Model.Order.Count" />
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function () {
+
+    });
+</script>*@
