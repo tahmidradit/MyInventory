@@ -1,25 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "/home/radit/Project/MyInventory/MyInventory/MyInventory.csproj": {}
+    "D:\\Project\\dotnet\\WebApplication\\source\\tahmidradit\\MyInventory\\MyInventory\\MyInventory.csproj": {}
   },
   "projects": {
-    "/home/radit/Project/MyInventory/MyInventory/MyInventory.csproj": {
+    "D:\\Project\\dotnet\\WebApplication\\source\\tahmidradit\\MyInventory\\MyInventory\\MyInventory.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/radit/Project/MyInventory/MyInventory/MyInventory.csproj",
+        "projectUniqueName": "D:\\Project\\dotnet\\WebApplication\\source\\tahmidradit\\MyInventory\\MyInventory\\MyInventory.csproj",
         "projectName": "MyInventory",
-        "projectPath": "/home/radit/Project/MyInventory/MyInventory/MyInventory.csproj",
-        "packagesPath": "/home/radit/.nuget/packages/",
-        "outputPath": "/home/radit/Project/MyInventory/MyInventory/obj/",
+        "projectPath": "D:\\Project\\dotnet\\WebApplication\\source\\tahmidradit\\MyInventory\\MyInventory\\MyInventory.csproj",
+        "packagesPath": "C:\\Users\\Radit\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\dotnet\\WebApplication\\source\\tahmidradit\\MyInventory\\MyInventory\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/radit/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Radit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,6 +35,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -106,7 +114,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
