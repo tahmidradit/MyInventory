@@ -1,25 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "/home/tahmidradit/Project/MyInventory/MyInventory/MyInventory.csproj": {}
+    "E:\\Projects\\Test\\tahmidradit\\MyInventory\\MyInventory\\MyInventory.csproj": {}
   },
   "projects": {
-    "/home/tahmidradit/Project/MyInventory/MyInventory/MyInventory.csproj": {
+    "E:\\Projects\\Test\\tahmidradit\\MyInventory\\MyInventory\\MyInventory.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/tahmidradit/Project/MyInventory/MyInventory/MyInventory.csproj",
+        "projectUniqueName": "E:\\Projects\\Test\\tahmidradit\\MyInventory\\MyInventory\\MyInventory.csproj",
         "projectName": "MyInventory",
-        "projectPath": "/home/tahmidradit/Project/MyInventory/MyInventory/MyInventory.csproj",
-        "packagesPath": "/home/tahmidradit/.nuget/packages/",
-        "outputPath": "/home/tahmidradit/Project/MyInventory/MyInventory/obj/",
+        "projectPath": "E:\\Projects\\Test\\tahmidradit\\MyInventory\\MyInventory\\MyInventory.csproj",
+        "packagesPath": "C:\\Users\\radit\\.nuget\\packages\\",
+        "outputPath": "E:\\Projects\\Test\\tahmidradit\\MyInventory\\MyInventory\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\DevExpress 23.2\\Components\\Offline Packages",
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/tahmidradit/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\radit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 23.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,6 +42,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -40,49 +55,49 @@
           "dependencies": {
             "Azure.Identity": {
               "target": "Package",
-              "version": "[1.10.4, )"
+              "version": "[1.13.1, )"
             },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[8.0.10, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[8.0.10, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[8.0.10, )"
             },
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[8.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[8.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[8.0.10, )"
             },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
-              "version": "[1.20.0-Preview.1, )"
+              "version": "[1.21.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[8.0.6, )"
             },
             "NuGet.Common": {
               "target": "Package",
-              "version": "[6.9.1, )"
+              "version": "[6.11.1, )"
             },
             "NuGet.Protocol": {
               "target": "Package",
-              "version": "[6.9.1, )"
+              "version": "[6.11.1, )"
             }
           },
           "imports": [
@@ -104,7 +119,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
